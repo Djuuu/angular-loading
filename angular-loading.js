@@ -11,7 +11,7 @@
     define(['angular', 'spinjs'], factory);
   } else if (typeof exports === 'object') {
     // CommonJS
-    factory(require('angular'), require('spinjs'));
+    factory(require('angular'), require('spin.js'));
   } else {
     // Browser globals
     factory(window.angular, window.Spinner)
@@ -68,7 +68,7 @@
           $rootScope.$broadcast('$loadingStart', key);
         });
       };
-      
+
       /**
        * Update loading state by key with loadingOptions object
        * @param {string} key
@@ -113,13 +113,13 @@
               spinner.spin(spinnerContainer[0]);
             }
           };
-          
+
           /**
            * Update spinner, use force to update when loader is already started
            */
           var update = function (newOptions, force) {
                 finish();
-              
+
                 options = extend(true, {}, loadingOptions, newOptions);
 
                 // Build template
@@ -147,13 +147,13 @@
                     .text(options.text);
                   body.append(text);
                 }
-                
+
                 element.append(container);
-                
+
                 if ( options.active || !key || force) {
                     start();
                 }
-          };          
+          };
 
           /**
            * Stops spinner
@@ -176,7 +176,7 @@
               start();
             }
           });
-          
+
           $rootScope.$on('$loadingUpdate', function (event, loadKey, options) {
             if (loadKey === key) {
               update(options, true);
