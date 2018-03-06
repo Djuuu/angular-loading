@@ -8,7 +8,7 @@
 (function (factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD
-    define(['angular', 'spinjs'], factory);
+    define(['angular', 'spin.js'], factory);
   } else if (typeof exports === 'object') {
     // CommonJS
     factory(require('angular'), require('spin.js'));
